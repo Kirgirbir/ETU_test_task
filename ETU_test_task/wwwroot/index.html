@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Equipment API Test</title>
+</head>
+<body>
+    <h1>Equipment API v1.2</h1>
+    <label for="pathInput">Path:</label>
+    <input type="text" id="pathInput" placeholder="Enter path here">
+    <button id="sendBtn">Send Request</button>
+
+    <h2>Response:</h2>
+    <pre id="response"></pre>
+
+    <script>
+document.getElementById('sendBtn').addEventListener('click', async () => {
+    const path = document.getElementById('pathInput').value;
+    const responseBox = document.getElementById('response');
+    responseBox.textContent = 'Loading...';
+
+    try {
+        const path = document.getElementById('pathInput').value;
+
+	const res = await fetch(`https://localhost:7001/api/equipment`, {
+    		method: 'GET',
+    		headers: {
+        		'path': encodeURIComponent(path)
+    		}
+	});
+
+
+	if (!res.ok) {
+    		throw new Error(`Network response error: ${res.status} ${res.statusText}`);
+	}
+
+        const data = await res.json();
+        responseBox.textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+        responseBox.textContent = 'Error: ' + error.message;
+    }
+});
+
+
+    </script>
+</body>
+</html>

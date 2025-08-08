@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<nodes>
+	<node id="100" name="Турбоагрегат 1">
+		<node id="101" name="Турбогенератор">
+			<node id="102" name="Ротор">
+				<node id="103" name="Скорость вращения">
+					<node id="104" name="Датчик1"/>
+					<node id="105" name="Датчик2"/>
+					<node id="106" name="Датчик3"/>
+				</node>
+			</node>
+		</node>
+	</node>
+	<node id="200" name="Турбоагрегат 2">
+		<node id="201" name="Турбогенератор">
+			<node id="202" name="Ротор">
+				<node id="203" name="Скорость вращения">
+					<node id="204" name="Датчик1"/>
+				</node>
+			</node>
+		</node>
+	</node>
+</nodes>
